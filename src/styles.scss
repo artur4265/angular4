@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+$panels: 5;
+
+
+main {
+	width: 300px+$panels;
+	height: 300px+$panels;
+	background: red;
+}
+
+
+
+.product {
+	width: 200px;
+	color: red;
+	.productname {
+		color: blue;
+		font-size: 16px;
+	}
+
+}
+
+
+.notuse {
+	display: inline-block;
+	text-align: center;
+	width: 2222px;
+	height: 1000px;
+	background: green;
+}

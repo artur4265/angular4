@@ -1,0 +1,54 @@
+<h1>
+  {{title}}
+</h1>
+
+<nav>
+  <a routerLink="/" routerLinkActive="active">home</a>
+  <a routerLink="/about" routerLinkActive="active">about</a>
+</nav>
+
+
+
+
+
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.text}}
+  </li>
+</ul>
+
+<br>
+
+<hr>
+
+
+
+<ul>
+  <li class="text" *ngFor="let item of articles | async">
+   <div>Article name "{{item.name}}"</div>
+   <div>Article body "{{item.text}}"</div>
+  </li>
+  <hr>
+</ul>
+
+
+<br>
+<br>
+<br>
+<br>
+
+  <ul>
+    <li *ngFor="let item of items | async">
+      <input type="text" #updatetext [value]="item.text" />
+      <button (click)="updateItem(item.$key, updatetext.value)">Update</button>
+      <button (click)="deleteItem(item.$key)">Delete</button>
+    </li>
+  </ul>
+
+  <input type="text" #newitem />
+  <button (click)="addItem(newitem.value)">Add</button>
+  <button (click)="deleteEverything()">Delete All</button>
+
+
+
+  <router-outlet></router-outlet>
